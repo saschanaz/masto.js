@@ -1,5 +1,6 @@
 import { Http } from './http';
 import { Response } from './http/http';
+import { id } from './utils/id';
 
 export class Paginator<Params, Result>
   implements AsyncIterableIterator<Result>

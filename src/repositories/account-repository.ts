@@ -156,7 +156,7 @@ export class AccountRepository
   @version({ since: '0.0.0' })
   getFollowersIterable(
     id: string,
-    params: DefaultPaginationParams,
+    params: DefaultPaginationParams = {},
   ): Paginator<DefaultPaginationParams, Account[]> {
     return new Paginator(this.http, `/api/v1/accounts/${id}/followers`, params);
   }
