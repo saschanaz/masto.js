@@ -40,10 +40,13 @@ describe('status', () => {
   });
 
   it('type checks', () => {
+    // @ts-expect-error: Poll cannot be combined with media
     status.create({
       mediaIds: ['123', '456'],
-      // @ts-expect-error: Poll cannot be combined with media
-      poll: { options: ['Apple', 'Banana'] },
+      poll: {
+        options: ['Apple', 'Banana'],
+        expiresIn: 10,
+      },
     });
 
     // Status can be null when mediaIds provided
