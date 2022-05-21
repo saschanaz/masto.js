@@ -31,6 +31,7 @@ export class SerializerNativeImpl implements Serializer {
   deserialize<T = Record<string, unknown>>(type: MimeType, data: string): T {
     switch (type) {
       case 'application/json':
+      case 'application/json; charset=utf-8':
         try {
           return transformKeys(JSON.parse(data), camelCase);
         } catch {

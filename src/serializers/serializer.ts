@@ -1,5 +1,6 @@
 export type MimeType =
   | 'application/json'
+  | 'application/json; charset=utf-8'
   | 'multipart/form-data'
   | 'application/x-www-form-urlencoded';
 
