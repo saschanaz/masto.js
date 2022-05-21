@@ -1,32 +1,33 @@
 import { flattenObject } from './form-data.ts';
+import { assertEquals } from 'https://deno.land/std@0.140.0/testing/asserts.ts';
 
-test('flat value', () => {
+Deno.test('flat value', () => {
   const result = flattenObject({
     apple: 'red',
     mandarin: 'orange',
     grapes: 'purple',
   });
 
-  expect(result).toStrictEqual({
+  assertEquals(result, {
     apple: 'red',
     mandarin: 'orange',
     grapes: 'purple',
   });
 });
 
-test('array', () => {
+Deno.test('array', () => {
   const result = flattenObject({
     animals: ['lion', 'giraffe', 'elephant'],
   });
 
-  expect(result).toStrictEqual({
+  assertEquals(result, {
     'animals[0]': 'lion',
     'animals[1]': 'giraffe',
     'animals[2]': 'elephant',
   });
 });
 
-test('nested object', () => {
+Deno.test('nested object', () => {
   const result = flattenObject({
     a: 'string',
     b: 123,
@@ -42,7 +43,7 @@ test('nested object', () => {
     },
   });
 
-  expect(result).toStrictEqual({
+  assertEquals(result, {
     a: 'string',
     b: 123,
     'c[0]': 1,
