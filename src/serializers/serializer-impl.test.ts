@@ -1,10 +1,13 @@
-import { camelCase } from 'change-case';
+import { assertEquals } from 'https://deno.land/std@0.140.0/testing/asserts.ts';
+import { describe, it } from 'https://deno.land/std@0.140.0/testing/bdd.ts';
+
+import { camelCase } from 'https://deno.land/x/case@2.1.1/mod.ts';
 
 import { transformKeys } from './transform-keys.ts';
 
 describe('transformKeys', () => {
   it('transforms a flat object', () => {
-    expect(
+    assertEquals(
       transformKeys(
         {
           key: 'value',
@@ -13,15 +16,16 @@ describe('transformKeys', () => {
         },
         camelCase,
       ),
-    ).toEqual({
-      key: 'value',
-      keyKey: ['value', 'value'],
-      keyKeyKey: 3,
-    });
+      {
+        key: 'value',
+        keyKey: ['value', 'value'],
+        keyKeyKey: 3,
+      },
+    );
   });
 
   it('transforms a deep object', () => {
-    expect(
+    assertEquals(
       transformKeys(
         {
           key: {
@@ -32,13 +36,14 @@ describe('transformKeys', () => {
         },
         camelCase,
       ),
-    ).toEqual({
-      key: { keyKey: { keyKeyKey: 'value' } },
-    });
+      {
+        key: { keyKey: { keyKeyKey: 'value' } },
+      },
+    );
   });
 
   it('transforms a deep object inside an array', () => {
-    expect(transformKeys([{ key_one: 'value' }], camelCase)).toEqual([
+    assertEquals(transformKeys([{ key_one: 'value' }], camelCase), [
       {
         keyOne: 'value',
       },
@@ -46,7 +51,7 @@ describe('transformKeys', () => {
   });
 
   it('transforms a array inside an object', () => {
-    expect(
+    assertEquals(
       transformKeys(
         {
           key_one: [
@@ -57,8 +62,9 @@ describe('transformKeys', () => {
         },
         camelCase,
       ),
-    ).toEqual({
-      keyOne: [{ valueOne: 'value' }],
-    });
+      {
+        keyOne: [{ valueOne: 'value' }],
+      },
+    );
   });
 });

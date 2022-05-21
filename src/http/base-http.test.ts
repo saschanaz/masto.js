@@ -1,7 +1,8 @@
-import { SerializerNativeImpl } from '../serializers/index.ts';
-import { BaseHttp } from './base-http.ts';
 import { assertEquals } from 'https://deno.land/std@0.140.0/testing/asserts.ts';
 import { describe, it } from 'https://deno.land/std@0.140.0/testing/bdd.ts';
+
+import { SerializerNativeImpl } from '../serializers/index.ts';
+import { BaseHttp } from './base-http.ts';
 
 class Test extends BaseHttp {
   config = {

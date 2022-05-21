@@ -1,4 +1,4 @@
-import { camelCase, snakeCase } from 'https://deno.land/x/case/mod.ts';
+import { camelCase, snakeCase } from "https://deno.land/x/case@2.1.1/mod.ts";
 
 import { flattenObject } from './form-data.ts';
 import { MimeType, Serializer } from './serializer.ts';

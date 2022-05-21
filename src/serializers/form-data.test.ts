@@ -1,5 +1,6 @@
-import { flattenObject } from './form-data.ts';
 import { assertEquals } from 'https://deno.land/std@0.140.0/testing/asserts.ts';
+
+import { flattenObject } from './form-data.ts';
 
 Deno.test('flat value', () => {
   const result = flattenObject({
