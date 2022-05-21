@@ -1,4 +1,19 @@
-import { httpDelete, httpGet, HttpMockImpl, httpPost } from '../../http/http-mock-impl.ts';
+import {
+  assert,
+  assertEquals,
+} from 'https://deno.land/std@0.140.0/testing/asserts.ts';
+import {
+  describe,
+  it,
+  beforeEach,
+} from 'https://deno.land/std@0.140.0/testing/bdd.ts';
+
+import {
+  httpDelete,
+  httpGet,
+  HttpMockImpl,
+  httpPost,
+} from '../../http/http-mock-impl.ts';
 import { StatusRepository } from '../status-repository.ts';
 
 describe('status', () => {
@@ -9,22 +24,22 @@ describe('status', () => {
     mockHttp.clear();
   });
 
-  test('fetch', async () => {
+  it('fetch', async () => {
     await status.fetch('123123');
-    expect(httpGet.mock.calls[0][0]).toBe('/api/v1/statuses/123123');
+    assertEquals(httpGet.calls[0].args[0], '/api/v1/statuses/123123');
   });
 
-  test('create', async () => {
+  it('create', async () => {
     await status.create({
       status: 'hello',
     });
-    expect(httpPost.mock.calls[0][0]).toBe('/api/v1/statuses');
-    expect(httpPost.mock.calls[0][1]).toStrictEqual({
+    assertEquals(httpPost.calls[0].args[0], '/api/v1/statuses');
+    assertEquals(httpPost.calls[0].args[1], {
       status: 'hello',
     });
-  })
+  });
 
-  test('type checks', () => {
+  it('type checks', () => {
     status.create({
       mediaIds: ['123', '456'],
       // @ts-expect-error: Poll cannot be combined with media
@@ -33,7 +48,7 @@ describe('status', () => {
 
     // Status can be null when mediaIds provided
     status.create({
-      mediaIds: ['123123']
+      mediaIds: ['123123'],
     });
 
     // @ts-expect-error: Status cannot be null when mediaIds are not provided
@@ -41,11 +56,11 @@ describe('status', () => {
       status: null,
     });
 
-    expect(true).toBeTruthy();
+    assert(true);
   });
 
-  test('delete', async () => {
+  it('delete', async () => {
     await status.remove('123123');
-    expect(httpDelete.mock.calls[0][0]).toBe('/api/v1/statuses/123123');
+    assertEquals(httpDelete.calls[0].args[0], '/api/v1/statuses/123123');
   });
 });

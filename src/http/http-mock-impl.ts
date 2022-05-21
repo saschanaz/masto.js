@@ -1,26 +1,28 @@
+import { spy } from 'https://deno.land/std@0.140.0/testing/mock.ts';
+
 import { Http } from './http.ts';
 
-export const httpRequest = jest.fn();
-export const httpGet = jest.fn();
-export const httpPost = jest.fn();
-export const httpPatch = jest.fn();
-export const httpPut = jest.fn();
-export const httpDelete = jest.fn();
+export const httpRequest = spy();
+export const httpGet = spy();
+export const httpPost = spy();
+export const httpPatch = spy();
+export const httpPut = spy();
+export const httpDelete = spy();
 
 export class HttpMockImpl implements Http {
   clear() {
-    httpRequest.mockClear();
-    httpGet.mockClear();
-    httpPost.mockClear();
-    httpPatch.mockClear();
-    httpPut.mockClear();
-    httpDelete.mockClear();
+    httpRequest.calls.length = 0;
+    httpGet.calls.length = 0;
+    httpPost.calls.length = 0;
+    httpPatch.calls.length = 0;
+    httpPut.calls.length = 0;
+    httpDelete.calls.length = 0;
   }
 
-  request = httpRequest;
-  get = httpGet;
-  post = httpPost;
-  patch = httpPatch;
-  put = httpPut;
-  delete = httpDelete;
+  request = httpRequest as any;
+  get = httpGet as any;
+  post = httpPost as any;
+  patch = httpPatch as any;
+  put = httpPut as any;
+  delete = httpDelete as any;
 }

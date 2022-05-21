@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "strict": true
