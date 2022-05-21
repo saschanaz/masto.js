@@ -38,10 +38,13 @@ export class HttpNativeImpl extends BaseHttp implements Http {
       });
       const text = await response.text();
 
-      return this.serializer.deserialize(
-        response.headers.get('Content-Type') as MimeType,
-        text,
-      );
+      return {
+        data: this.serializer.deserialize(
+          response.headers.get('Content-Type') as MimeType,
+          text,
+        ),
+        headers: Object.fromEntries(response.headers),
+      };
     } catch (e) {
       if (!(e instanceof Response)) {
         throw e;
