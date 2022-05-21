@@ -1,5 +1,5 @@
-import { SerializerNodejsImpl } from '../serializers';
-import { BaseWs } from './base-ws';
+import { SerializerNodejsImpl } from '../serializers/index.ts';
+import { BaseWs } from './base-ws.ts';
 
 class Test extends BaseWs {
   baseUrl = 'wss://mastodon.social';

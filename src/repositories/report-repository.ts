@@ -1,5 +1,5 @@
-import { version } from '../decorators';
-import { Http } from '../http';
+import { version } from '../decorators/index.ts';
+import { Http } from '../http/index.ts';
 
 export type ReportCategory = 'spam' | 'violation' | 'other';
 

@@ -1,8 +1,8 @@
-import { version } from '../decorators';
-import { Account } from '../entities';
-import { Http } from '../http';
-import { Paginator } from '../paginator';
-import { DefaultPaginationParams, Repository } from '../repository';
+import { version } from '../decorators/index.ts';
+import { Account } from '../entities/index.ts';
+import { Http } from '../http/index.ts';
+import { Paginator } from '../paginator.ts';
+import { DefaultPaginationParams, Repository } from '../repository.ts';
 
 export class FollowRequestRepository implements Repository<Account> {
   constructor(private readonly http: Http, readonly version: string) {}

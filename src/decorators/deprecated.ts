@@ -20,13 +20,8 @@ export const deprecated =
       this: unknown,
       ...args: Parameters<typeof original>
     ) {
-      if (
-        process.env.NODE_ENV !== 'production' ||
-        !process.env.NODE_IGNORE_MASTO_WARNINGS
-      ) {
-        // eslint-disable-next-line no-console
-        console.warn(`#${name.toString()} is deprecated. ${message}`);
-      }
+      // eslint-disable-next-line no-console
+      console.warn(`#${name.toString()} is deprecated. ${message}`);
 
       return original.apply(this, args);
     };

@@ -1,4 +1,4 @@
-import { flattenObject } from './form-data';
+import { flattenObject } from './form-data.ts';
 
 test('flat value', () => {
   const result = flattenObject({

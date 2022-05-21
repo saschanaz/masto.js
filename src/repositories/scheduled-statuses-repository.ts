@@ -1,8 +1,8 @@
-import { version } from '../decorators';
-import { ScheduledStatus } from '../entities';
-import { Http } from '../http';
-import { Paginator } from '../paginator';
-import { DefaultPaginationParams } from '../repository';
+import { version } from '../decorators/index.ts';
+import { ScheduledStatus } from '../entities/index.ts';
+import { Http } from '../http/index.ts';
+import { Paginator } from '../paginator.ts';
+import { DefaultPaginationParams } from '../repository.ts';
 
 export interface UpdateScheduledStatusParams {
   /** ISO 8601 Date-time at which the status will be published. Must be at least 5 minutes into the future. */

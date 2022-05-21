@@ -1,6 +1,6 @@
-import { MastoConfig } from '../config';
-import { Serializer } from '../serializers';
-import { Data, Headers, Http, Request, Response } from './http';
+import { MastoConfig } from '../config.ts';
+import { Serializer } from '../serializers/index.ts';
+import { Data, Headers, Http, Request, Response } from './http.ts';
 
 export abstract class BaseHttp implements Http {
   abstract readonly config: MastoConfig;

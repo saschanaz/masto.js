@@ -1,4 +1,4 @@
-import { Account, Status, Tag } from '.';
+import { Account, Status, Tag } from './index.ts';
 
 /**
  * Represents the results of a search.

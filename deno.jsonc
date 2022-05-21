@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true
+  },
+  "lint": {
+    "files": {
+      "include": ["src/"]
+    },
+    "rules": {
+      "exclude": ["no-explicit-any"]
+    }
+  }
+}

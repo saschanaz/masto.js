@@ -1,4 +1,4 @@
-import { Http } from '../http';
+import { Http } from '../http/index.ts';
 
 export interface CreateConfirmationParams {
   readonly email?: string;

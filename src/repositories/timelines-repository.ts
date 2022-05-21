@@ -1,8 +1,8 @@
-import { deprecated, version } from '../decorators';
-import { Status } from '../entities';
-import { Http } from '../http';
-import { Paginator } from '../paginator';
-import { DefaultPaginationParams } from '../repository';
+import { deprecated, version } from '../decorators/index.ts';
+import { Status } from '../entities/index.ts';
+import { Http } from '../http/index.ts';
+import { Paginator } from '../paginator.ts';
+import { DefaultPaginationParams } from '../repository.ts';
 
 export interface FetchTimelineParams extends DefaultPaginationParams {
   /** Show only local statuses? Defaults to false. */

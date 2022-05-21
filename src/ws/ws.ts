@@ -1,23 +1,23 @@
-import EventEmitter from 'eventemitter3';
+import EventEmitter from 'https://deno.land/x/eventemitter@1.2.4/mod.ts';
 
-import { Conversation, Notification, Status } from '../entities';
+import { Conversation, Notification, Status } from '../entities/index.ts';
 
 /** Map of event name and callback argument */
 export interface EventTypeMap {
   /** Status posted */
-  update: [Status];
+  update: (status: Status) => void;
   /** Status deleted */
-  delete: [Status['id']];
+  delete: (id: Status['id']) => void;
   /** User's notification */
-  notification: [Notification];
+  notification: (notification: Notification) => void;
   /** User's filter changed */
-  filters_changed: [];
+  filters_changed: () => void;
   /** Status added to a conversation */
-  conversation: [Conversation];
+  conversation: (conversation: Conversation) => void;
   /** Status updated */
-  'status.update': [Status];
+  'status.update': (status: Status) => void;
   /** for RxJS' `fromEvent` compatibility */
-  [K: string]: unknown[];
+  [K: string]: any;
 }
 
 /** Supported event names */

@@ -1,11 +1,11 @@
-import { MastoConflictError } from './masto-conflict-error';
-import { MastoError, MastoErrorDetails } from './masto-error';
-import { MastoForbiddenError } from './masto-forbidden-error';
-import { MastoGoneError } from './masto-gone-error';
-import { MastoNotFoundError } from './masto-not-found-error';
-import { MastoRateLimitError } from './masto-rate-limit-error';
-import { MastoUnauthorizedError } from './masto-unauthorized-error';
-import { MastoUnprocessableEntityError } from './masto-unprocessable-entity-error';
+import { MastoConflictError } from './masto-conflict-error.ts';
+import { MastoError, MastoErrorDetails } from './masto-error.ts';
+import { MastoForbiddenError } from './masto-forbidden-error.ts';
+import { MastoGoneError } from './masto-gone-error.ts';
+import { MastoNotFoundError } from './masto-not-found-error.ts';
+import { MastoRateLimitError } from './masto-rate-limit-error.ts';
+import { MastoUnauthorizedError } from './masto-unauthorized-error.ts';
+import { MastoUnprocessableEntityError } from './masto-unprocessable-entity-error.ts';
 
 export interface BaseCreateErrorParams {
   readonly message: string;

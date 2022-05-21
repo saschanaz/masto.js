@@ -1,8 +1,5 @@
 {
-  "search.exclude": {
-    "**/.yarn": true,
-    "**/docs": true
-  },
-  "npm.packageManager": "yarn",
-  "eslint.packageManager": "yarn"
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.unstable": false
 }

@@ -1,5 +1,5 @@
-import { Http } from './http';
-import { Response } from './http/http';
+import { Http } from './http/index.ts';
+import { Response } from './http/http.ts';
 
 export class Paginator<Params, Result>
   implements AsyncIterableIterator<Result>
@@ -47,7 +47,7 @@ export class Paginator<Params, Result>
     };
   }
 
-  async throw<T, U>(e: unknown): Promise<IteratorResult<T, U>> {
+  throw<T, U>(e: unknown): Promise<IteratorResult<T, U>> {
     throw e;
   }
 

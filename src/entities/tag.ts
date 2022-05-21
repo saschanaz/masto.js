@@ -1,4 +1,4 @@
-import { History } from '.';
+import { History } from './index.ts';
 
 /**
  * Represents a hashtag used within the content of a status.

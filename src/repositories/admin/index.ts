@@ -1,2 +1,2 @@
-export * from './report-repository';
-export * from './account-repository';
+export * from './report-repository.ts';
+export * from './account-repository.ts';

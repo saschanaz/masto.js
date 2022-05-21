@@ -1,2 +1,2 @@
-export * from './admin';
-export * from './masto';
+export * from './admin.ts';
+export * from './masto.ts';

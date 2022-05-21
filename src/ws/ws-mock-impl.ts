@@ -1,6 +1,6 @@
-import EventEmitter from 'eventemitter3';
+import EventEmitter from 'https://deno.land/x/eventemitter@1.2.4/mod.ts';
 
-import { EventTypeMap, Ws, WsEvents } from './ws';
+import { EventTypeMap, Ws, WsEvents } from './ws.ts';
 
 export const wsDisconnect = jest.fn();
 export const wsOn = jest.fn();

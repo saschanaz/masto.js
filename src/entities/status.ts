@@ -7,7 +7,7 @@ import {
   Mention,
   Poll,
   Tag,
-} from '.';
+} from './index.ts';
 
 export type StatusVisibility = 'public' | 'unlisted' | 'private' | 'direct';
 

@@ -1,8 +1,8 @@
-import { version } from '../decorators';
-import { Account, List } from '../entities';
-import { Http } from '../http';
-import { Paginator } from '../paginator';
-import { DefaultPaginationParams, Repository } from '../repository';
+import { version } from '../decorators/index.ts';
+import { Account, List } from '../entities/index.ts';
+import { Http } from '../http/index.ts';
+import { Paginator } from '../paginator.ts';
+import { DefaultPaginationParams, Repository } from '../repository.ts';
 
 export interface ModifyListParams {
   /** The title of the list to be created. */

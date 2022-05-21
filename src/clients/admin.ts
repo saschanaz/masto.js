@@ -1,5 +1,5 @@
-import { Http } from '../http';
-import { AdminRepositories } from '../repositories';
+import { Http } from '../http/index.ts';
+import { AdminRepositories } from '../repositories/index.ts';
 
 export class MastoAdminClient {
   readonly account: AdminRepositories.AccountRepository;

@@ -1,7 +1,7 @@
-import { version } from '../decorators';
-import { Activity, Instance } from '../entities';
-import { Http } from '../http';
-import { Repository } from '../repository';
+import { version } from '../decorators/index.ts';
+import { Activity, Instance } from '../entities/index.ts';
+import { Http } from '../http/index.ts';
+import { Repository } from '../repository.ts';
 
 export class InstanceRepository implements Repository<Instance> {
   constructor(private readonly http: Http, readonly version: string) {}

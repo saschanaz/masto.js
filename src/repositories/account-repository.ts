@@ -1,4 +1,4 @@
-import { version } from '../decorators/version';
+import { version } from '../decorators/version.ts';
 import type {
   Account,
   AccountCredentials,
@@ -9,10 +9,10 @@ import type {
   Relationship,
   Source,
   Status,
-} from '../entities';
-import { Http } from '../http';
-import { Paginator } from '../paginator';
-import { DefaultPaginationParams, Repository } from '../repository';
+} from '../entities/index.ts';
+import { Http } from '../http/index.ts';
+import { Paginator } from '../paginator.ts';
+import { DefaultPaginationParams, Repository } from '../repository.ts';
 
 export interface CreateAccountParams {
   /** The desired username for the account */

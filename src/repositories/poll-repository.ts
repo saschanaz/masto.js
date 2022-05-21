@@ -1,7 +1,7 @@
-import { version } from '../decorators';
-import { Poll } from '../entities';
-import { Http } from '../http';
-import { Repository } from '../repository';
+import { version } from '../decorators/index.ts';
+import { Poll } from '../entities/index.ts';
+import { Http } from '../http/index.ts';
+import { Repository } from '../repository.ts';
 
 export interface VotePollParams {
   /** Array of own votes containing index for each option (starting from 0) */

@@ -1,9 +1,9 @@
-import { MastoTimeoutError } from '../errors';
+import { MastoTimeoutError } from '../errors/index.ts';
 
-export const timeout = async <T>(task: Promise<T>, ms?: number): Promise<T> => {
+export const timeout = <T>(task: Promise<T>, ms?: number): Promise<T> => {
   // It actually is depending on the runtime...
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let cancellationToken: any | null = null;
+  let cancellationToken: number | undefined;
 
   if (ms == null) {
     return task;
@@ -17,7 +17,7 @@ export const timeout = async <T>(task: Promise<T>, ms?: number): Promise<T> => {
   });
 
   const mainPromise = task.then((value) => {
-    clearTimeout(cancellationToken as NodeJS.Timeout);
+    clearTimeout(cancellationToken);
     return value;
   });
 

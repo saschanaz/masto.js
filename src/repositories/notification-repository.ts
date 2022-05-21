@@ -1,8 +1,8 @@
-import { version } from '../decorators';
-import { Notification, NotificationType } from '../entities';
-import { Http } from '../http';
-import { Paginator } from '../paginator';
-import { DefaultPaginationParams, Repository } from '../repository';
+import { version } from '../decorators/index.ts';
+import { Notification, NotificationType } from '../entities/index.ts';
+import { Http } from '../http/index.ts';
+import { Paginator } from '../paginator.ts';
+import { DefaultPaginationParams, Repository } from '../repository.ts';
 
 export interface FetchNotificationsParams extends DefaultPaginationParams {
   /** Instead of specifying every known type to exclude, you can specify only the types you want. */

@@ -1,7 +1,7 @@
-import { version } from '../decorators';
-import { FeaturedTag, Tag } from '../entities';
-import { Http } from '../http';
-import { Repository } from '../repository';
+import { version } from '../decorators/index.ts';
+import { FeaturedTag, Tag } from '../entities/index.ts';
+import { Http } from '../http/index.ts';
+import { Repository } from '../repository.ts';
 
 export interface CreateFeaturedTagParams {
   /** The hashtag to be featured. */

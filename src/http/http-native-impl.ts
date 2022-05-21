@@ -1,8 +1,8 @@
-import { MastoConfig } from '../config';
-import { createError, CreateErrorParams } from '../errors';
-import { MimeType, Serializer } from '../serializers';
-import { BaseHttp } from './base-http';
-import { Http, Request, Response } from './http';
+import { MastoConfig } from '../config.ts';
+import { createError, CreateErrorParams } from '../errors/index.ts';
+import { MimeType, Serializer } from '../serializers/index.ts';
+import { BaseHttp } from './base-http.ts';
+import { Http, Request, Response } from './http.ts';
 
 export class HttpNativeImpl extends BaseHttp implements Http {
   constructor(readonly config: MastoConfig, readonly serializer: Serializer) {

@@ -1,3 +1,2 @@
-export * from './ws';
-export * from './ws-nodejs-impl';
-export * from './ws-native-impl';
+export * from './ws.ts';
+export * from './ws-native-impl.ts';

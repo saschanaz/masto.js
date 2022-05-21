@@ -1,6 +1,6 @@
-import semver from 'semver';
+import * as semver from 'https://deno.land/x/semver@v1.4.0/mod.ts';
 
-import { MastoNotFoundError } from '../errors';
+import { MastoNotFoundError } from '../errors/index.ts';
 
 export interface Version {
   readonly version: string;

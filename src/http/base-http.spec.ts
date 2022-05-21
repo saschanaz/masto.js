@@ -1,5 +1,5 @@
-import { SerializerNodejsImpl } from '../serializers';
-import { BaseHttp } from './base-http';
+import { SerializerNodejsImpl } from '../serializers/index.ts';
+import { BaseHttp } from './base-http.ts';
 
 class Test extends BaseHttp {
   config = {

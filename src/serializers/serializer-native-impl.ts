@@ -1,8 +1,8 @@
-import { camelCase, snakeCase } from 'change-case';
+import { camelCase, snakeCase } from 'https://deno.land/x/case/mod.ts';
 
-import { flattenObject } from './form-data';
-import { MimeType, Serializer } from './serializer';
-import { transformKeys } from './transform-keys';
+import { flattenObject } from './form-data.ts';
+import { MimeType, Serializer } from './serializer.ts';
+import { transformKeys } from './transform-keys.ts';
 
 export class SerializerNativeImpl implements Serializer {
   serialize(type: MimeType, rawData: unknown): unknown {

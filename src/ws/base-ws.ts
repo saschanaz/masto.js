@@ -1,8 +1,8 @@
-import semver from 'semver';
+import * as semver from 'https://deno.land/x/semver@v1.4.0/mod.ts';
 
-import { MastoConfig } from '../config';
-import { Serializer } from '../serializers';
-import { Ws, WsEvents } from './ws';
+import { MastoConfig } from '../config.ts';
+import { Serializer } from '../serializers/index.ts';
+import { Ws, WsEvents } from './ws.ts';
 
 export abstract class BaseWs implements Ws {
   protected abstract readonly baseUrl: string;

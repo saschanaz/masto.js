@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { isObject } from './is-object';
+import { isObject } from './is-object.ts';
 
 const fromEntries = <T>(entries: [string, unknown][]) => {
   const object: { [key: string]: unknown } = {};
@@ -21,7 +21,7 @@ export const transformKeys = <T>(
   if (Array.isArray(data)) {
     return data.map((value) => transformKeys(value, transform)) as unknown as T;
   }
-  
+
   if (isObject(data)) {
     return fromEntries<T>(
       Object.entries(data).map(([key, value]) => [

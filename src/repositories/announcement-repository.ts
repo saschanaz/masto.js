@@ -1,7 +1,7 @@
-import { version } from '../decorators';
-import { Announcement, Reaction } from '../entities';
-import { Http } from '../http';
-import { Repository } from '../repository';
+import { version } from '../decorators/index.ts';
+import { Announcement, Reaction } from '../entities/index.ts';
+import { Http } from '../http/index.ts';
+import { Repository } from '../repository.ts';
 
 export class AnnouncementRepository implements Repository<Announcement> {
   constructor(private readonly http: Http, readonly version: string) {}

@@ -1,4 +1,4 @@
-import { Field, StatusVisibility } from '.';
+import { Field, StatusVisibility } from './index.ts';
 
 /**
  * Represents display or publishing preferences of user's own account.

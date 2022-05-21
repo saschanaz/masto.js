@@ -1,2 +1,2 @@
-export * from './delay';
-export * from './timeout';
+export * from './delay.ts';
+export * from './timeout.ts';

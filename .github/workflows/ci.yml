@@ -10,31 +10,15 @@ on:
 
 jobs:
   test:
-    name: Test on node ${{ matrix.node_version }}
+    name: Test on Deno
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14]
-    env:
-      NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+      - uses: actions/checkout@v3
+      - uses: maximousblk/setup-deno@v1
 
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-
-      - name: Build TypeScript
-        run: yarn run build
+      - name: Lint
+        run: deno lint
 
       - name: Run tests
-        run: yarn run test
-
-      - name: Send codecov to Codecov.io
-        run: yarn run codecov
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        run: deno test

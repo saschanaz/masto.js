@@ -1,4 +1,4 @@
-import { Account as PublicAccount } from '..';
+import { Account as PublicAccount } from '../index.ts';
 
 export type AccountRole = 'moderator' | 'admin' | 'user';
 

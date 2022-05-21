@@ -1,6 +1,6 @@
-import { version } from '../../decorators';
-import { Admin } from '../../entities';
-import { Http } from '../../http';
+import { version } from '../../decorators/index.ts';
+import { Admin } from '../../entities/index.ts';
+import { Http } from '../../http/index.ts';
 
 export interface AdminFetchAccountParams {
   /** Filter for local accounts? */

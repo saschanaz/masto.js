@@ -1,9 +1,9 @@
-import { MastoClient } from '../clients';
-import { MastoConfig } from '../config';
-import { HttpNativeImpl } from '../http/http-native-impl';
-import { InstanceRepository } from '../repositories';
-import { SerializerNativeImpl } from '../serializers/serializer-native-impl';
-import { WsNativeImpl } from '../ws/ws-native-impl';
+import { MastoClient } from '../clients/index.ts';
+import { MastoConfig } from '../config.ts';
+import { HttpNativeImpl } from '../http/http-native-impl.ts';
+import { InstanceRepository } from '../repositories/index.ts';
+import { SerializerNativeImpl } from '../serializers/serializer-native-impl.ts';
+import { WsNativeImpl } from '../ws/ws-native-impl.ts';
 
 export const login = async (config: MastoConfig): Promise<MastoClient> => {
   const serializer = new SerializerNativeImpl();
@@ -19,14 +19,14 @@ export const login = async (config: MastoConfig): Promise<MastoClient> => {
   return new MastoClient(http, ws, instance.version, config);
 };
 
-export * from '../decorators';
-export * from '../entities';
-export * from '../errors';
-// export * from '../http';
-export * from '../repositories';
-// export * from '../serializers';
-// export * from '../ws';
-export * from '../clients';
-export * from '../config';
-export * from '../paginator';
-export * from '../repository';
+export * from '../decorators/index.ts';
+export * from '../entities/index.ts';
+export * from '../errors/index.ts';
+// export * from '../http/index.ts';
+export * from '../repositories/index.ts';
+// export * from '../serializers/index.ts';
+// export * from '../ws/index.ts';
+export * from '../clients/index.ts';
+export * from '../config.ts';
+export * from '../paginator.ts';
+export * from '../repository.ts';

@@ -1,2 +1,2 @@
-export { version } from './version';
-export { deprecated } from './deprecated';
+export { version } from './version.ts';
+export { deprecated } from './deprecated.ts';

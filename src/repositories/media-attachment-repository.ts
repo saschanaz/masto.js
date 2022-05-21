@@ -1,8 +1,8 @@
-import { deprecated, version } from '../decorators';
-import { Attachment } from '../entities';
-import { Http } from '../http';
-import { Repository } from '../repository';
-import { delay, timeout } from '../utils';
+import { deprecated, version } from '../decorators/index.ts';
+import { Attachment } from '../entities/index.ts';
+import { Http } from '../http/index.ts';
+import { Repository } from '../repository.ts';
+import { delay, timeout } from '../utils/index.ts';
 
 export interface CreateMediaAttachmentParams {
   /** The file to be attached, using multipart form data. */

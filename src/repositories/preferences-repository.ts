@@ -1,7 +1,7 @@
-import { version } from '../decorators';
-import { Preference } from '../entities';
-import { Http } from '../http';
-import { Repository } from '../repository';
+import { version } from '../decorators/index.ts';
+import { Preference } from '../entities/index.ts';
+import { Http } from '../http/index.ts';
+import { Repository } from '../repository.ts';
 
 export class PreferenceRepository implements Repository<Preference> {
   constructor(private readonly http: Http, readonly version: string) {}

@@ -1,5 +1,5 @@
-import { HttpMockImpl, httpPost } from '../../http/http-mock-impl';
-import { EmailRepository } from '../email-repository';
+import { HttpMockImpl, httpPost } from '../../http/http-mock-impl.ts';
+import { EmailRepository } from '../email-repository.ts';
 
 describe('email', () => {
   const mockHttp = new HttpMockImpl();

@@ -1,9 +1,9 @@
-import EventEmitter from 'eventemitter3';
+import EventEmitter from 'https://deno.land/x/eventemitter@1.2.4/mod.ts';
 
-import { MastoConfig } from '../config';
-import { Serializer } from '../serializers';
-import { BaseWs } from './base-ws';
-import { Event, EventType, EventTypeMap, Ws, WsEvents } from './ws';
+import { MastoConfig } from '../config.ts';
+import { Serializer } from '../serializers/index.ts';
+import { BaseWs } from './base-ws.ts';
+import { Event, EventType, EventTypeMap, Ws, WsEvents } from './ws.ts';
 
 /**
  * Mastodon streaming api wrapper

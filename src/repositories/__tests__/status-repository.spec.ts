@@ -1,5 +1,5 @@
-import { httpDelete, httpGet, HttpMockImpl, httpPost } from '../../http/http-mock-impl';
-import { StatusRepository } from '../status-repository';
+import { httpDelete, httpGet, HttpMockImpl, httpPost } from '../../http/http-mock-impl.ts';
+import { StatusRepository } from '../status-repository.ts';
 
 describe('status', () => {
   const mockHttp = new HttpMockImpl();

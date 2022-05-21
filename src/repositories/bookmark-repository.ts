@@ -1,8 +1,8 @@
-import { version } from '../decorators';
-import { Status } from '../entities';
-import { Http } from '../http';
-import { Paginator } from '../paginator';
-import { DefaultPaginationParams, Repository } from '../repository';
+import { version } from '../decorators/index.ts';
+import { Status } from '../entities/index.ts';
+import { Http } from '../http/index.ts';
+import { Paginator } from '../paginator.ts';
+import { DefaultPaginationParams, Repository } from '../repository.ts';
 
 export class BookmarkRepository implements Repository<Status> {
   constructor(private readonly http: Http, readonly version: string) {}

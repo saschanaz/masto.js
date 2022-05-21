@@ -1,5 +1,5 @@
-import { version } from '../decorators';
-import { Ws, WsEvents } from '../ws';
+import { version } from '../decorators/index.ts';
+import { Ws, WsEvents } from '../ws/index.ts';
 
 export class StreamRepository {
   constructor(private readonly ws: Ws, readonly version: string) {}

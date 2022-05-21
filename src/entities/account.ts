@@ -1,4 +1,4 @@
-import { Emoji, Field, Source } from '.';
+import { Emoji, Field, Source } from './index.ts';
 
 /**
  * Represents a user of Mastodon and their associated profile.

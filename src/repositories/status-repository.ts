@@ -1,4 +1,4 @@
-import { deprecated, version } from '../decorators';
+import { deprecated, version } from '../decorators/index.ts';
 import {
   Account,
   Card,
@@ -7,9 +7,9 @@ import {
   StatusEdit,
   StatusSource,
   StatusVisibility,
-} from '../entities';
-import { Http } from '../http';
-import { Repository } from '../repository';
+} from '../entities/index.ts';
+import { Http } from '../http/index.ts';
+import { Repository } from '../repository.ts';
 
 export interface CreateStatusParamsBase {
   /** ID of the status being replied to, if status is a reply */

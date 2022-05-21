@@ -1,4 +1,4 @@
-import { MastoError, MastoErrorDetails } from './masto-error';
+import { MastoError, MastoErrorDetails } from './masto-error.ts';
 
 /**
  * Mastodon forbidden error

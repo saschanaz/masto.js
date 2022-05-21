@@ -1,7 +1,7 @@
-import { version } from '../decorators';
-import { Account } from '../entities';
-import { Http } from '../http';
-import { Repository } from '../repository';
+import { version } from '../decorators/index.ts';
+import { Account } from '../entities/index.ts';
+import { Http } from '../http/index.ts';
+import { Repository } from '../repository.ts';
 
 export type DirectoryOrderType = 'active' | 'new';
 

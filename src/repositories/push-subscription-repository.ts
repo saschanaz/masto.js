@@ -1,7 +1,7 @@
-import { version } from '../decorators';
-import { PushSubscription, PushSubscriptionAlerts } from '../entities';
-import { Http } from '../http';
-import { Repository } from '../repository';
+import { version } from '../decorators/index.ts';
+import { PushSubscription, PushSubscriptionAlerts } from '../entities/index.ts';
+import { Http } from '../http/index.ts';
+import { Repository } from '../repository.ts';
 
 export type SubscriptionPolicy = 'all' | 'followed' | 'follower' | 'none';
 

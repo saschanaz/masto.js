@@ -1,8 +1,8 @@
-import { MastoConfig } from '../config';
-import { version } from '../decorators';
-import { Results } from '../entities';
-import { Http } from '../http';
-import { Paginator } from '../paginator';
+import { MastoConfig } from '../config.ts';
+import { version } from '../decorators/index.ts';
+import { Results } from '../entities/index.ts';
+import { Http } from '../http/index.ts';
+import { Paginator } from '../paginator.ts';
 import {
   AccountRepository,
   AnnouncementRepository,
@@ -35,10 +35,10 @@ import {
   SuggestionRepository,
   TimelinesRepository,
   TrendRepository,
-} from '../repositories';
-import { DefaultPaginationParams } from '../repository';
-import { Ws } from '../ws';
-import { MastoAdminClient } from './admin';
+} from '../repositories/index.ts';
+import { DefaultPaginationParams } from '../repository.ts';
+import { Ws } from '../ws/index.ts';
+import { MastoAdminClient } from './admin.ts';
 
 export type SearchType = 'accounts' | 'hashtags' | 'statuses';
 

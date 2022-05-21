@@ -1,4 +1,4 @@
-import { Account } from '.';
+import { Account } from './index.ts';
 
 export interface InstanceStatusesConfiguration {
   maxCharacters: number;
