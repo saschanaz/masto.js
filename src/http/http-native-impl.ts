@@ -36,6 +36,11 @@ export class HttpNativeImpl extends BaseHttp implements Http {
         headers,
         body: body as string,
       });
+      if (!response.ok) {
+        const error = new Error("HTTP request failed");
+        (error as any).response = response;
+        throw error;
+      }
       const text = await response.text();
 
       return {
