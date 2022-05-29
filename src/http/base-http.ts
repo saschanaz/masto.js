@@ -23,9 +23,10 @@ export abstract class BaseHttp implements Http {
       params,
     );
 
-    return `${this.config.url}${path}${
-      searchParams !== '' ? `?${searchParams}` : ''
-    }`;
+    return new URL(
+      `${path}${searchParams !== '' ? `?${searchParams}` : ''}`,
+      this.config.url,
+    ).toString();
   }
 
   get<T>(url: string, data?: Data, init: Partial<Request> = {}): Promise<T> {
